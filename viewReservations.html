@@ -43,10 +43,14 @@
   </div>
 
   <script type="text/javascript">
+
+
     $("#tables").on("load", function() {
 
       $.get("/api/reservations/", function(data) {
-        console.log(data);
+
+        for(i = 0; i < reservations.lenght; i++) {
+          console.log(data);
         if (data) {
           $("#tables").show();
           $("#tables").text(data.uniqueID);
@@ -54,6 +58,8 @@
           $("#tables").text(
             "All seats avaialble at this time");
         }
+        }
+        
       });
     });
 
