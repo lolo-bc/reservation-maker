@@ -3,8 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Star Wars - Express</title>
-  <!-- Latest compiled and minified CSS & JS -->
+  <title>HOT RES</title>
   <link rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet"
@@ -21,7 +20,7 @@
           <h1>Hot Resterant!</h1>
           <h3>Make a Reservation</h3>
           <hr>
-          <a href="/index.html"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Home</button></a>
+          <a href="/index"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Home</button></a>
           <a href="/api/reservations"><button class="btn btn-danger btn-lg"><span
             class="fa fa-eye"></span>View Reservations</button></a>
         </div>
@@ -73,9 +72,9 @@
         event.preventDefault();
         var newReservation = {
           name: $("#name").val().trim(),
-          role: $("#number").val().trim(),
-          age: $("#email").val().trim(),
-          forcePoints: $("#uniqueID").val().trim()
+          number: $("#number").val().trim(),
+          email: $("#email").val().trim(),
+          uniqueID: $("#uniqueID").val().trim()
         };
   
         $.post("/api/reservations", newReservation)
