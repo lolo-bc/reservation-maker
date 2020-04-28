@@ -40,7 +40,6 @@ app.get("/makeReservation", function(req, res) {
 app.get("/viewres", function(req, res) {
     res.sendFile(path.join(__dirname, "viewres.html"));
   });
-  
 
 // Displays all characters
 app.get("/api/reservations", function(req, res) {
