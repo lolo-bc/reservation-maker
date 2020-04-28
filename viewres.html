@@ -57,7 +57,7 @@
         for(i = 0; i < data.length; i++) {
           console.log(data[i].uniqueID);
         if (data) {
-          $("#tables").append(data[i].uniqueID);
+          $("#tables").append(data[i].uniqueID + "<br>");
         } else {
           $("#tables").text(
             "All seats avaialble at this time");
@@ -70,7 +70,7 @@
         for(i = 0; i < data.length; i++) {
           console.log(data[i].uniqueID);
         if (data) {
-          $("#waitlist").append(data[i].uniqueID);
+          $("#waitlist").append(data[i].uniqueID + "<br>");
         }
         }
         
