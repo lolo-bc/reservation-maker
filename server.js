@@ -68,11 +68,12 @@ app.post("/api/reservations", function(req, res) {
 
   console.log(newReservation);
 
-  reservations.push(newReservation);
 
   res.json(newReservation);
 
-  if (reservations.length >= 5) {
+  if (reservations.length < 5) {
+    reservations.push(newReservation);
+  } else if (reservations.length >= 5) {
     waitlist.push(newReservation);
   }
 });
@@ -80,5 +81,5 @@ app.post("/api/reservations", function(req, res) {
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log("App listening on PORT " + "http://localhost:" + PORT);
 });

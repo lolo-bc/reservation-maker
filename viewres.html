@@ -33,7 +33,12 @@
               <h3><strong>Current Reservations</strong></h3>
             </div>
             <div class="card-body">
+            <h4>Tables</h4>
+            <br>
               <span id="tables" class="form-control"></span>
+            <br>
+            <h4>Waitlist</h4>
+                <span id="waitlist" class="form-control"></span>
             </div>
           </div>
   
@@ -49,11 +54,10 @@
 
 
       $.get("/api/reservations/", function(data) {
-
-        for(i = 0; i < reservations.length; i++) {
-          console.log(data);
+        for(i = 0; i < data.length; i++) {
+          console.log(data[i].uniqueID);
         if (data) {
-          $("#tables").text(data.uniqueID);
+          $("#tables").text(data[i].uniqueID);
         } else {
           $("#tables").text(
             "All seats avaialble at this time");
@@ -62,6 +66,15 @@
         
       });
 
+      $.get("/api/waitlist/", function(data) {
+        for(i = 0; i < data.length; i++) {
+          console.log(data[i].uniqueID);
+        if (data) {
+          $("#waitlist").text(data[i].uniqueID);
+        }
+        }
+        
+      });
 
   </script>
 </body>
