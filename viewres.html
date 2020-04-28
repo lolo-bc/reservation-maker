@@ -50,7 +50,7 @@
 
       $.get("/api/reservations/", function(data) {
 
-        for(i = 0; i < reservations.lenght; i++) {
+        for(i = 0; i < reservations.length; i++) {
           console.log(data);
         if (data) {
           $("#tables").text(data.uniqueID);
